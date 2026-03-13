@@ -44,7 +44,9 @@
       "height-description": "Custom component width.",
       "hide-when-idle-description": "When enabled, the visualizer is hidden unless a player is actively playing.",
       "hide-when-idle-label": "Hide when no media is playing",
-      "width-description": "Custom component width."
+      "width-description": "Custom component width.",
+      "vertical-label": "Vertical visualizer",
+      "vertical-description": "Enable a vertical audio visualizer."
     },
     "battery": {
       "device-default": "Default (Display Device)",

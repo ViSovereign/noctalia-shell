@@ -95,6 +95,7 @@ Singleton {
                                     "height": 72,
                                     "visualizerType": "linear",
                                     "hideWhenIdle": false,
+                                    "verticalWidget": false,
                                     "colorName": "primary"
                                   }
                                 })

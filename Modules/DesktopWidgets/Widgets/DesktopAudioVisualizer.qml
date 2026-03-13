@@ -19,6 +19,7 @@ DraggableDesktopWidget {
   readonly property int visualizerHeight: (widgetData && widgetData.height !== undefined) ? widgetData.height : (widgetMetadata?.height ?? 72)
   readonly property string visualizerType: (widgetData && widgetData.visualizerType !== undefined) ? widgetData.visualizerType : (widgetMetadata?.visualizerType ?? "linear")
   readonly property bool hideWhenIdle: (widgetData && widgetData.hideWhenIdle !== undefined) ? widgetData.hideWhenIdle : (widgetMetadata?.hideWhenIdle ?? false)
+  readonly property bool verticalWidget: (widgetData && widgetData.verticalWidget !== undefined) ? widgetData.verticalWidget : (widgetMetadata?.verticalWidget ?? false)
   readonly property string colorName: (widgetData && widgetData.colorName !== undefined) ? widgetData.colorName : (widgetMetadata?.colorName ?? "primary")
 
   readonly property color fillColor: Color.resolveColorKey(colorName)
@@ -90,6 +91,7 @@ DraggableDesktopWidget {
       anchors.fill: parent
       values: SpectrumService.values
       fillColor: root.fillColor
+      vertical: root.verticalWidget
       showMinimumSignal: true
     }
   }
@@ -100,6 +102,7 @@ DraggableDesktopWidget {
       anchors.fill: parent
       values: SpectrumService.values
       fillColor: root.fillColor
+      vertical: root.verticalWidget
       showMinimumSignal: true
     }
   }
@@ -110,6 +113,7 @@ DraggableDesktopWidget {
       anchors.fill: parent
       values: SpectrumService.values
       fillColor: root.fillColor
+      vertical: root.verticalWidget
       showMinimumSignal: true
     }
   }

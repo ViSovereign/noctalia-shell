@@ -18,6 +18,7 @@ ColumnLayout {
   property string valueVisualizerType: widgetData.visualizerType !== undefined ? widgetData.visualizerType : widgetMetadata.visualizerType
   property string valueColorName: widgetData.colorName !== undefined ? widgetData.colorName : widgetMetadata.colorName
   property bool valueHideWhenIdle: widgetData.hideWhenIdle !== undefined ? widgetData.hideWhenIdle : widgetMetadata.hideWhenIdle
+  property bool valueVerticalWidget: widgetData.verticalWidget !== undefined ? widgetData.verticalWidget : widgetMetadata.verticalWidget
   property bool valueShowBackground: widgetData.showBackground !== undefined ? widgetData.showBackground : widgetMetadata.showBackground
   property bool valueRoundedCorners: widgetData.roundedCorners !== undefined ? widgetData.roundedCorners : widgetMetadata.roundedCorners
 
@@ -28,6 +29,7 @@ ColumnLayout {
     settings.visualizerType = valueVisualizerType;
     settings.colorName = valueColorName;
     settings.hideWhenIdle = valueHideWhenIdle;
+    settings.verticalWidget = valueVerticalWidget;
     settings.showBackground = valueShowBackground;
     settings.roundedCorners = valueRoundedCorners;
     settingsChanged(settings);
@@ -71,6 +73,18 @@ ColumnLayout {
       }
     }
     defaultValue: String(widgetMetadata.height)
+  }
+
+  NToggle {
+    Layout.fillWidth: true
+    label: I18n.tr("bar.audio-visualizer.vertical-label")
+    description: I18n.tr("bar.audio-visualizer.vertical-description")
+    checked: valueVerticalWidget
+    onToggled: checked => {
+                 valueVerticalWidget = checked;
+                 saveSettings();
+               }
+    defaultValue: widgetMetadata.valueVerticalWidget
   }
 
   NComboBox {
